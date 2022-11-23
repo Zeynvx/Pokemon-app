@@ -1,0 +1,10 @@
+.pkmn_main-bg {
+  padding-bottom: 50px;
+}
+
+@media only screen and (height > 430px) {
+  .pkmn_main-bg {
+    width: 100%;
+    height: 100%;
+  }
+}

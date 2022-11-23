@@ -1,0 +1,124 @@
+.pkmn-list__main {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 20px;
+  gap: 15px;
+}
+
+.pkmn-list__loader {
+  display: block;
+  height: 60px;
+  width: 60px;
+  margin: 20px;
+  border-right: 2px solid #fff;
+  border-radius: 50%;
+  animation: loader;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+.pkmn-list__container {
+  padding: 20px 0 40px 0;
+  justify-content: space-evenly;
+}
+
+.pkmn-list__options {
+  justify-content: space-between;
+  padding: 20px 20px;
+}
+
+.pkmn-list__container,
+.pkmn-list__options {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgba(0, 0, 0, .4);
+  margin: 10px 10px;
+  border-radius: 25px;
+  gap: 15px;
+}
+
+.pkmn-list__container--loader {
+  color: #fff;
+}
+
+@keyframes loader {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.pkmn-list__options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+
+.options__container {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.options--count {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.options--count button,
+.options--pages button {
+  border: 1px solid #fff;
+  background: rgba(207, 207, 207, 0.26);
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.options--count button:hover, .options--pages button:hover {
+  background: rgba(92, 92, 92, 0.26);
+}
+
+.options--pages button:disabled {
+  background: rgba(158, 158, 158, 0.678);
+}
+
+.options--count p, .options--pages p {
+  margin-right: 10px;
+}
+.options--pages {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.options--pages button {
+  --size: 40px;
+  border-radius: 100%;
+  width: var(--size);
+  height: var(--size);
+}
+
+@media only screen and (width > 450px) {
+  .pkmn-list__main {
+    max-width: 500px;
+  }
+}
+
+@media only screen and (width > 600px) {
+
+  .pkmn-list__container,
+  .pkmn-list__options {
+    margin: 30px 20px;
+  }
+
+  .pkmn-list__options {
+    padding: 10px 20px;
+  }
+}

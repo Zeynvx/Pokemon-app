@@ -1,0 +1,33 @@
+<div *ngIf="!pokemon && !message" class="pkmn-data__main">
+  <span class="pkmn-data__loader"></span>
+  <h3>Cargando...</h3>
+</div>
+<div *ngIf="message" class="pkmn-data__main">
+  <h3>{{message}}</h3>
+</div>
+<div *ngIf="pokemon" class="pkmn-data__main">
+  <figure *ngIf="pokemon" class="bd-{{pokemon.types[0].type.name}}">
+    <img src={{pkmnImg(pokemon.sprites.other)}} alt={{pokemon.name}}>
+  </figure>
+  <div class="pkmn-data__container">
+    <div class="pkmn-data__name">
+      <p *ngIf="pokemon">#{{changeId(pokemon.id)}}</p>
+      <h1 *ngIf="pokemon">{{firstUpperCase(pokemon.name)}}</h1>
+    </div>
+    <div class="pkmn-data__types">
+      <span class="type-{{pokemon.types[0].type.name}}"
+        *ngIf="pokemon && pokemon.types[0]">{{firstUpperCase(pokemon.types[0].type.name)}}</span>
+      <span class="type-{{pokemon.types[1].type.name}}"
+        *ngIf="pokemon && pokemon.types[1]">{{firstUpperCase(pokemon.types[1].type.name)}}</span>
+    </div>
+    <div class="pkmn-data__abilities-container" *ngIf="pokemon">
+      <div class="pkmn-data__abilities">
+        <h4>Abilities:</h4>
+        <div *ngFor="let ability of pokemon.abilities">
+          <p *ngIf="!ability.is_hidden">{{firstUpperCase(ability.ability.name)}}</p>
+          <p *ngIf="ability.is_hidden">{{firstUpperCase(ability.ability.name)}} (Hidden)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

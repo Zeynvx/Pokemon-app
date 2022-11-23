@@ -1,0 +1,14 @@
+<a *ngIf="pkmnData" [routerLink]="['/pokemon/' + pkmnData.id]" class="pkmn-item__container tbg-{{pkmnData.types[0].type.name}}">
+  <img src={{pkmnImg(pkmnData.sprites.other)}} alt={{pkmnData.name}}>
+  <div class="pkmn-item__data">
+    <div class="pkmn-item__name">
+      <p>#{{changeId(pkmnData.id)}}</p>
+      <h3>{{firstUpperCase(pkmnData.name)}}</h3>
+    </div>
+    <div class="pkmn-item__types">
+      <span *ngFor="let type of pkmnData.types" class="type-{{type.type.name}}">
+        {{firstUpperCase(type.type.name)}}
+      </span>
+    </div>
+  </div>
+</a>

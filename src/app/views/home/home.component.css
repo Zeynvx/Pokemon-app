@@ -1,0 +1,49 @@
+.pkmn-home__container {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 40px 20px;
+}
+
+.pkmn-home__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
+}
+
+.pkmn-home__title h1 {
+  font-size: 2.1em;
+}
+
+.pkmn-home__logo {
+  width: 200px;
+}
+
+.pkmn-home__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 170px;
+  height: 60px;
+  border: 1px solid rgb(182, 182, 182);
+  background-color: rgba(39, 39, 39, 0.678);
+  color: #fff;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color .3s;
+}
+
+.pkmn-home__button:hover {
+  background-color: rgba(136, 136, 136, 0.575);
+}
+
+@media only screen and (width > 600px) {
+  .pkmn-home__container {
+    width: 600px;
+  }
+}

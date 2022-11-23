@@ -1,0 +1,26 @@
+<header>
+  <a [routerLink]="['/']" class="pkmn-header__container">
+    <img src="assets/images/pokeball.png" alt="Search Pokemon">
+    <span><strong>Search</strong>Pokemon</span>
+  </a>
+
+  <nav class="pkmn-header__nav">
+    <span class="fa-solid fa-bars" id="btn-menu" (click)="btnMenuAction()"></span>
+    <ul class="pkmn-header__menu bg-transition" [ngClass]="!type ? 'bgDefault' : 'bg-'+type">
+      <li>
+        <i class="fa-solid fa-house"></i>
+        <a (click)="hideNavMenu()" [routerLinkActive]="['nav__menu--active']" [routerLink]="['/']"
+          [routerLinkActiveOptions]="{exact: true}">Home</a>
+      </li>
+      <li>
+        <img src="assets/images/nav-pokeball.ico" alt="Pokemon list">
+        <a (click)="hideNavMenu()" [routerLinkActive]="['nav__menu--active']" [routerLink]="['/pkmn-list']">Pokemon
+          List</a>
+      </li>
+      <li>
+        <i class="fa-brands fa-github"></i>
+        <a (click)="hideNavMenu()" [routerLinkActive]="['nav__menu--active']" [routerLink]="['/']">Github</a>
+      </li>
+    </ul>
+  </nav>
+</header>

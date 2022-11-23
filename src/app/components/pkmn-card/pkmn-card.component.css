@@ -1,0 +1,66 @@
+.pkmn-data__main {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 20px;
+}
+
+.pkmn-data__loader {
+  display: block;
+  height: 60px;
+  width: 60px;
+  margin: 20px;
+  border-right: 2px solid #fff;
+  border-radius: 50%;
+  animation: loader;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes loader {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.pkmn-data__main figure {
+  background: #fff;
+  border-radius: 100%;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pkmn-data__main img {
+  width: 130px;
+}
+
+.pkmn-data__abilities {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pkmn-data__abilities p {
+  padding-left: 20px;
+}
+
+.pkmn-data__abilities h4 {
+  margin-top: 5px;
+}
+
+@media only screen and (width > 450px) {
+  .pkmn-data__main {
+    max-width: 500px;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: center;
+  }
+}

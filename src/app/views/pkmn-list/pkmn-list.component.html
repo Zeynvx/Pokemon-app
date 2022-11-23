@@ -1,0 +1,26 @@
+<div *ngIf="message" class="pkmn-list__main">
+  <h3>{{message}}</h3>
+</div>
+<div *ngIf="pkmnArray" class="pkmn-list__options">
+  <h2>Results</h2>
+  <div class="options__container">
+    <div class="options--count">
+      <p>Quantity:</p>
+      <button (click)="getPokemonList(defaultParam, 10)">10</button>
+      <button (click)="getPokemonList(defaultParam, 20)">20</button>
+      <button (click)="getPokemonList(defaultParam, 30)">30</button>
+    </div>
+    <div class="options--pages">
+      <p>Pages:</p>
+      <button [disabled]="!prevLink" (click)="prevAction(prevLink)" class="fa-solid fa-angle-left"></button>
+      <button [disabled]="!nextLink" (click)="nextAction(nextLink)" class="fa-solid fa-angle-right"></button>
+    </div>
+  </div>
+</div>
+<div class="pkmn-list__container">
+  <div *ngIf="pkmnArray && pkmnArray.length < 1" class="pkmn-list__container--loader">
+    <span class="pkmn-list__loader"></span>
+    <h3>Cargando...</h3>
+  </div>
+  <pkmn-item *ngFor="let pokemon of pkmnArray" [pokemon]="pokemon"></pkmn-item>
+</div>
