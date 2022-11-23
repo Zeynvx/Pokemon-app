@@ -12,8 +12,13 @@
   list-style: none;
 }
 
-* {  
+* {
   font-family: 'Open Sans', sans-serif;
+}
+
+.pkmn_main {
+  margin: auto;
+  max-width: 1920px;
 }
 
 .bgDefault {
