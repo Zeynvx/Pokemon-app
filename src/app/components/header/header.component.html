@@ -8,18 +8,18 @@
     <span class="fa-solid fa-bars" id="btn-menu" (click)="btnMenuAction()"></span>
     <ul class="pkmn-header__menu bg-transition" [ngClass]="!type ? 'bgDefault' : 'bg-'+type">
       <li>
-        <i class="fa-solid fa-house"></i>
         <a (click)="hideNavMenu()" [routerLinkActive]="['nav__menu--active']" [routerLink]="['/']"
-          [routerLinkActiveOptions]="{exact: true}">Home</a>
+          [routerLinkActiveOptions]="{exact: true}"><i class="fa-solid fa-house"></i>Home</a>
       </li>
       <li>
-        <img src="assets/images/nav-pokeball.ico" alt="Pokemon list">
-        <a (click)="hideNavMenu()" [routerLinkActive]="['nav__menu--active']" [routerLink]="['/pkmn-list']">Pokemon
-          List</a>
+        <a (click)="hideNavMenu()" [routerLinkActive]="['nav__menu--active']" [routerLink]="['/pkmn-list']">
+          <img src="assets/images/nav-pokeball.ico" alt="Pokemon list">
+          <p>Pokemon list</p>
+        </a>
       </li>
       <li>
-        <i class="fa-brands fa-github"></i>
-        <a (click)="hideNavMenu()" [routerLinkActive]="['nav__menu--active']" [routerLink]="['/']">Github</a>
+        <a (click)="hideNavMenu()" [routerLinkActive]="['nav__menu--active']" [routerLink]="['/']"><i
+            class="fa-brands fa-github"></i>Github</a>
       </li>
     </ul>
   </nav>
